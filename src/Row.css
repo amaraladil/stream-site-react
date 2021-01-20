@@ -1,0 +1,68 @@
+.row {
+  margin-left: 20px;
+  color: white;
+}
+
+.row-posters {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scrollbar-width: none; /* FireFox scroll hider */
+  padding: 20px;
+}
+/* Google scroll hider */
+.row-posters::-webkit-scrollbar {
+  display: none;
+}
+
+.row-container {
+  margin-right: 12px;
+  position: relative;
+  transition: transform 450ms;
+}
+
+.row-container span {
+  position: absolute;
+  left: 1px;
+  bottom: 10px;
+  padding: 0 5px 0 5px;
+  background-color: rgba(37, 37, 37, 0.5);
+  opacity: 0;
+  transition: all 0.5s;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.row-poster {
+  height: 100px;
+  object-fit: contain;
+  max-height: 100px;
+}
+
+.row-container:hover {
+  transform: scale(1.08);
+}
+
+.row-container:not(.poster-large):hover span {
+  opacity: 1;
+}
+
+.poster-large img {
+  max-height: 250px;
+  height: 250px;
+  width: 167px;
+}
+/* 
+.poster-large span {
+  opacity: 0;
+} */
+
+.poster-large:hover {
+  transform: scale(1.09);
+}
